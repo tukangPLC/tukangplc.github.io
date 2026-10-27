@@ -1,7 +1,10 @@
 
     const languageRoot = document.documentElement;
     const languageButton = document.getElementById("langToggle");
-    const translatedElements = document.querySelectorAll("[data-id][data-en]");
+    const translatedElements = Array.from(document.querySelectorAll("[data-id][data-en]"));
+    const indonesianCopy = new Map(
+      translatedElements.map((element) => [element, element.textContent.trim()])
+    );
     const description = document.querySelector('meta[name="description"]');
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -11,7 +14,7 @@
       translatedElements.forEach((element) => {
         element.textContent = language === "en"
           ? element.getAttribute("data-en")
-          : element.getAttribute("data-id");
+          : indonesianCopy.get(element);
       });
       languageButton.textContent = language === "id" ? "EN" : "ID";
       languageButton.setAttribute(
@@ -40,3 +43,4 @@
       applyLanguage(languageRoot.dataset.lang === "id" ? "en" : "id");
     });
   
+
