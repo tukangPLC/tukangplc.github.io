@@ -1,30 +1,89 @@
+---
+---
 <!doctype html>
-<html lang="id">
+<html lang="id" data-lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TukangPLC — Otomasi Industri</title>
-  <meta name="description" content="Belajar otomasi industri dan PC-Based Control bersama TukangPLC.">
+  <meta name="theme-color" content="#f6efdf">
+  <meta name="description" content="TukangPLC — ruang belajar PLC dan PC-Based Control melalui tutorial praktik, catatan, dan eksperimen." />
+  <title>TukangPLC — Belajar PLC dari praktik</title>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 </head>
-<body>
-  <header>
-    <h1>TukangPLC</h1>
-    <p>Belajar otomasi industri dan PC-Based Control lewat eksperimen praktis.</p>
+<body data-page="home">
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#home" aria-label="TukangPLC, beranda">
+        <img src="https://avatars.githubusercontent.com/u/67008023?v=4" alt="Logo TukangPLC">
+        <span class="brand-word">Tukang<span>PLC</span></span>
+      </a>
+      <nav class="navlinks" aria-label="Navigasi utama">
+        <a href="#tutorial" data-id="navTutorial" data-en="Tutorial">Tutorial</a>
+        <a href="#artikel" data-id="navArticle" data-en="Articles">Artikel</a>
+        <a href="#tentang" data-id="navAbout" data-en="About">Tentang</a>
+        <a href="#kontak" data-id="navContact" data-en="Contact">Kontak</a>
+      </nav>
+      <div class="navtools">
+        <button class="lang" id="langToggle" type="button" aria-label="Switch to English">EN</button>
+        <a class="contact-link" href="#kontak" data-id="navTalk" data-en="Say hello">Sapa TukangPLC</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h2>Temukan TukangPLC</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/@TukangPLC">Video YouTube</a></li>
-      <li><a href="https://github.com/tukangPLC">Proyek dan kode di GitHub</a></li>
-    </ul>
+  <main id="home">
+    <section class="hero shell">
+      <div class="hero-inner">
+        <div class="kicker" data-id="heroKicker" data-en="Independent learning project">Belajar otomasi industri</div>
+        <h1 data-id="heroTitle" data-en="PLC on PC. Learn by doing.">PLC di PC. Langsung praktik.</h1>
+        <p class="hero-copy" data-id="heroCopy" data-en="TukangPLC is a shared learning space for understanding PLC and PC-Based Control through clear explanations, small experiments, and examples you can follow.">Tutorial PLC umum dan TwinCAT lewat contoh yang bisa dicoba.</p>
+      </div>
+    </section>
 
-    <h2>Yang akan dibahas</h2>
-    <p>Tutorial, demonstrasi, dan catatan praktik seputar software otomasi industri.</p>
+    <section class="doors shell" aria-labelledby="doorsTitle">
+      <div class="doors-intro"><h2 id="doorsTitle" data-id="doorsTitleText" data-en="Two ways in. Pick what brings you here.">Mulai dari yang kamu butuhkan.</h2><p data-id="doorsCopy" data-en="You can start from the basics or jump into adapting PLC software for a real application.">Pilih jalur belajar atau eksplorasi yang paling relevan.</p></div>
+      <div class="door-grid">
+        <a class="door" href="#tutorial"><span class="door-index">01 / BELAJAR</span><div><h3 data-id="doorOneTitle" data-en="Start with PLC on a PC">Mulai PLC berbasis PC</h3><p data-id="doorOneCopy" data-en="Understand the essentials, then build a small control application step by step.">Pelajari dasar PLC dan buat aplikasi sederhana di PC.</p></div><span class="door-arrow" aria-hidden="true">↗</span></a>
+        <a class="door" href="#artikel"><span class="door-index">02 / EKSPLORASI</span><div><h3 data-id="doorTwoTitle" data-en="Shape PLC software around your application">Kembangkan aplikasi PLC-mu</h3><p data-id="doorTwoCopy" data-en="Explore tools, product features, and experiments that help a PLC application fit its job.">Eksplorasi tools, fitur, dan eksperimen untuk kebutuhan mesin.</p></div><span class="door-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="tutorial">
+      <div class="shell">
+        <div class="section-head"><div><div class="eyebrow" data-id="tutorialEyebrow" data-en="Learn by building">Jalur belajar</div><h2 data-id="tutorialTitle" data-en="A practical route into PLC and PC-Based Control.">PLC umum sampai aplikasi TwinCAT.</h2></div><p data-id="tutorialIntro" data-en="Tutorials move from general PLC concepts to practical software work. Each guide is written so you can understand the setup, repeat the steps, and inspect the result yourself.">Panduan langkah demi langkah, dilengkapi video dan repo untuk dicoba.</p></div>
+        <div class="learning-grid">
+          <article class="learning-card"><div class="eyebrow" data-id="generalEyebrow" data-en="The foundations">Fondasi</div><h3 data-id="generalTitle" data-en="PLC, without the mystery">Dasar PLC</h3><p data-id="generalCopy" data-en="I/O, scan cycles, basic logic, sequencing, and the ideas that carry across PLC platforms.">I/O, logika dasar, dan sequence yang berlaku lintas platform.</p><div class="topicline"><span>PLC basics</span><span>I/O</span><span>Sequence</span></div></article>
+          <article class="learning-card"><div class="eyebrow" data-id="twincatEyebrow" data-en="Small applications">Aplikasi sederhana</div><h3 data-id="twincatTitle" data-en="Build it with TwinCAT">Aplikasi TwinCAT</h3><p data-id="twincatCopy" data-en="Small, self-contained applications that make PLC code easier to understand and adapt.">Contoh coding PLC Beckhoff untuk aplikasi sederhana.</p><div class="topicline"><span>TwinCAT</span><span>Structured Text</span><span>HMI</span></div></article>
+        </div>
+      </div>
+    </section>
+    {% include latest-articles.html %}
+
+<section class="section" id="artikel">
+      <div class="shell article-band">
+        <div><div class="eyebrow" data-id="articleEyebrow" data-en="Notes from the workbench">Catatan dan eksperimen</div><h2 data-id="articleTitle" data-en="Some questions need a test, not a tutorial.">Artikel dan eksperimen.</h2><p data-id="articleCopy" data-en="The Articles section is for testing, comparing, and thinking out loud: what a feature does, where a product fits, and what an experiment actually showed.">Uji performa, review fitur produk, dan eksperimen aplikasi PLC.</p></div>
+        <ul class="experiment-list"><li><span>01</span><b data-id="articleTopic1" data-en="Performance testing">Uji performa</b></li><li><span>02</span><b data-id="articleTopic2" data-en="Product features and fit">Fungsi produk dan kecocokannya</b></li><li><span>03</span><b data-id="articleTopic3" data-en="Experiments and observations">Eksperimen dan pengamatan</b></li></ul>
+      </div>
+    </section>
+
+    <section class="section" id="tentang">
+      <div class="shell about-grid">
+        <div><div class="eyebrow" data-id="aboutEyebrow" data-en="About TukangPLC">Tentang TukangPLC</div><h2 data-id="aboutTitle" data-en="A place for practical, shareable knowledge.">Otomasi industri, dipelajari bersama.</h2><p data-id="aboutCopy" data-en="TukangPLC exists to make industrial automation easier to approach and easier to pass on. The work is documented in a way another learner or engineer can pick up, question, and build upon.">TukangPLC membagikan tutorial dan eksperimen otomasi industri agar pengetahuan praktis bisa dipelajari dan diteruskan.</p><p data-id="aboutCopy2" data-en="The focus begins with PLC fundamentals and Beckhoff TwinCAT examples, then widens toward the broader PC-Based Control ecosystem.">Fokus awal: PLC umum dan aplikasi sederhana dengan TwinCAT.</p></div>
+
+      </div>
+    </section>
+
+    <section class="section" id="kontak">
+      <div class="shell contact"><div><div class="eyebrow" style="color:#ffc47e" data-id="contactEyebrow" data-en="Keep the conversation going">Terhubung</div><h2 data-id="contactTitle" data-en="Have a topic worth exploring?">Ada ide atau pertanyaan?</h2><p data-id="contactCopy" data-en="Follow the project, browse the code, or suggest a question for a future experiment.">Temukan TukangPLC di GitHub dan YouTube.</p></div><div class="contact-actions"><a class="pill primary" href="https://github.com/tukangPLC" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="pill" href="https://www.youtube.com/@TukangPLC" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
+    </section>
   </main>
 
-  <footer>
-    <p>Konten edukasi independen oleh TukangPLC.</p>
-  </footer>
+  <footer><div class="shell footer-inner"><span>© <span id="year"></span> TukangPLC</span><span class="fine" data-id="footerNote" data-en="Independent educational project. Product and company names are used for identification and learning context.">Proyek edukasi independen.</span></div></footer>
+  <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
 </body>
 </html>
+
+
+
+
+
+

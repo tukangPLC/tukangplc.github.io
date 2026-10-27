@@ -1,0 +1,11 @@
+title: TukangPLC
+description: Tutorial PLC umum, TwinCAT, dan PC-Based Control.
+url: "https://tukangplc.github.io"
+baseurl: ""
+permalink: /artikel/:year/:month/:day/:title/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

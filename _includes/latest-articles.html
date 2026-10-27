@@ -1,0 +1,23 @@
+{% assign latest_articles = site.categories.artikel %}
+{% if latest_articles and latest_articles.size > 0 %}
+<section class="section" id="artikel-terbaru">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Artikel terbaru</div>
+        <h2>Baru dari TukangPLC</h2>
+      </div>
+      <p>Uji performa, review fitur produk, dan eksperimen aplikasi PLC.</p>
+    </div>
+    <div class="learning-grid">
+      {% for article in latest_articles limit:3 %}
+      <article class="learning-card">
+        <div class="eyebrow">{{ article.date | date: "%d %b %Y" }}</div>
+        <h3><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h3>
+        <p>{{ article.description | default: article.excerpt | strip_html | truncate: 150 }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
