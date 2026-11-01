@@ -9,34 +9,16 @@
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 </head>
 <body data-page="post">
-  <header class="topbar">
-    <div class="shell nav">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="TukangPLC, beranda">
-        <img src="https://avatars.githubusercontent.com/u/67008023?v=4" alt="Logo TukangPLC">
-        <span class="brand-word">Tukang<span>PLC</span></span>
-      </a>
-      <nav class="navlinks" aria-label="Navigasi utama">
-        <a href="{{ '/' | relative_url }}#tutorial" data-id="Tutorial" data-en="Tutorial">Tutorial</a>
-        <a href="{{ '/' | relative_url }}#artikel" data-id="Artikel" data-en="Articles">Artikel</a>
-        <a href="{{ '/' | relative_url }}#tentang" data-id="Tentang" data-en="About">Tentang</a>
-        <a href="{{ '/' | relative_url }}#kontak" data-id="Kontak" data-en="Contact">Kontak</a>
-      </nav>
-      <div class="navtools">
-        <button class="lang" id="langToggle" type="button" aria-label="Switch to English">EN</button>
-        <a class="contact-link" href="{{ '/' | relative_url }}#kontak" data-id="Sapa TukangPLC" data-en="Say hello">Sapa TukangPLC</a>
-      </div>
-    </div>
+  <header class="site-header">
+    <div class="header-row shell"><a class="site-title" href="{{ '/' | relative_url }}">TukangPLC <span>— PC-Based Control</span></a><nav class="primary-nav"><div class="nav-inner"><a href="{{ '/tutorial.html' | relative_url }}" data-id="Tutorial" data-en="Tutorial">Tutorial</a><a href="{{ '/artikel.html' | relative_url }}" data-id="Artikel" data-en="Articles">Artikel</a><a href="{{ '/tags.html' | relative_url }}" data-id="Tags" data-en="Tags">Tags</a><a href="{{ '/tentang.html' | relative_url }}" data-id="Tentang" data-en="About">Tentang</a><a href="{{ '/kontak.html' | relative_url }}" data-id="Kontak" data-en="Contact">Kontak</a></div></nav><button class="lang" id="langToggle" type="button" aria-label="Switch to English">EN</button></div>
   </header>
-  <main class="shell post-shell">
-    <a class="back-link" href="{{ '/' | relative_url }}#artikel" data-id="← Kembali ke artikel" data-en="← Back to articles">← Kembali ke artikel</a>
-    <article>
-      <div class="post-meta">{{ page.date | date: "%d %B %Y" }}</div>
-      <h1>{{ page.title | escape }}</h1>
-      {% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
-      <div class="article-body">{{ content }}</div>
+  <main class="shell page-content post-shell">
+    <a class="back-link" href="{{ '/' | relative_url }}#recent-posts" data-id="← Kembali ke konten" data-en="← Back to content">← Kembali ke konten</a>
+    <article><h1>{{ page.title | escape }}</h1><p class="post-meta">{{ page.date | date: "%d %B %Y" }} · {{ page.content | number_of_words | divided_by: 200 | plus: 1 }} menit baca</p>{% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}<div class="article-body">{{ content }}</div>
+      {% if page.tags and page.tags.size > 0 %}<div class="post-taxonomy">{% for tag in page.tags %}<a href="{{ '/tags.html' | relative_url }}#tag-{{ tag | slugify }}">{{ tag }}</a>{% endfor %}</div>{% endif %}
     </article>
   </main>
-  <footer><div class="shell footer-inner"><span>© <span id="year"></span> TukangPLC</span><span class="fine">Proyek edukasi independen.</span></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year"></span> TukangPLC</span><span class="footer-links"><a href="https://github.com/tukangPLC">GitHub</a><a href="https://www.youtube.com/@TukangPLC">YouTube</a></span></div></footer>
   <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
 </body>
 </html>
